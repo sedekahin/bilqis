@@ -1,8 +1,10 @@
 web1: 
   name: wp-web 
   shared_writable_dirs:
-    - /var/www/.htaccess
+    - /usr/web/.htaccess
     - wp-content/uploads/
+    - wp-content
+    - wp-includes/ms-files.php?file=$1
   after_build:
     - "mv pagoda/wp-config.php wp-config.php"
     - "rm -R pagoda"
